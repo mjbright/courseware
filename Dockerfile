@@ -29,6 +29,13 @@ RUN /home/saasbook/configure-image-0.10.3.sh
 
 USER saasbook
 
+# Added for running RSpec tests:
+RUN . /home/saasbook/.bashrc; gem install ZenTest
+RUN . /home/saasbook/.bashrc; gem install autotest-rails
+RUN . /home/saasbook/.bashrc; gem install rspec
+RUN . /home/saasbook/.bashrc; gem install debugger
+
+
 #EXPOSE 22
 #EXPOSE 3000
 #ENTRYPOINT /etc/init.d/ssh start
